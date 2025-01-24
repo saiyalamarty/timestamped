@@ -19,7 +19,7 @@ struct TimestampedView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Enter Timestamp")
                     .font(.headline)
-                    .foregroundColor(.secondary)
+                    .padding(.leading, 2)
                 
                 HStack {
                     TextField("Enter timestamp or date...", text: $rawInputText)
@@ -79,7 +79,7 @@ struct TimestampedView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Result")
                         .font(.headline)
-                        .foregroundColor(.secondary)
+                        .padding(.leading, 2)
                     
                     HStack(spacing: 12) {
                         VStack(alignment: .leading, spacing: 8) {
@@ -130,7 +130,7 @@ struct TimestampedView: View {
                     .background(Color.secondary.opacity(0.1))
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     .overlay(
-                        RoundedRectangle(cornerRadius: 8)
+                        RoundedRectangle(cornerRadius: 6)
                             .stroke(Color.secondary.opacity(0.2), lineWidth: 1)
                     )
                 }
