@@ -15,11 +15,12 @@ struct TimestampedView: View {
     @State private var inputText: String = ""
     @State private var result: String = ""
     @State private var showCopiedFeedback: Bool = false
+    @State private var showingDatePicker: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             // Input Section
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 12) {
                 HStack {
                     Text("Enter Timestamp")
                         .font(.headline)
@@ -52,7 +53,7 @@ struct TimestampedView: View {
                 HStack {
                     TextField("Enter timestamp or date...", text: $rawInputText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.system(.body))
+                        .font(.body)
                         .onChange(of: rawInputText) { _, _ in
                             identifyAndConvert()
                         }
@@ -71,7 +72,7 @@ struct TimestampedView: View {
                 .help("Enter 'now', Unix timestamp, or date (yyyy-MM-dd HH:mm:ss)")
                 
                 // Quick preset buttons
-                HStack(spacing: 8) {
+                HStack(spacing: 12) {
                     ForEach(["now", "tomorrow", "yesterday"], id: \.self) { preset in
                         Button(preset.capitalized) {
                             rawInputText = preset
@@ -97,29 +98,29 @@ struct TimestampedView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 4))
                     }
                 }
-                .font(.caption)
+                .font(.body)
             }
 
             Divider()
 
             // Result Section
             if !result.isEmpty {
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 12) {
                     Text("Result")
                         .font(.headline)
                         .padding(.leading, 2)
                     
                     HStack(spacing: 12) {
-                        VStack(alignment: .leading, spacing: 8) {
+                        VStack(alignment: .leading, spacing: 12) {
                             Text(result)
-                                .font(.system(.body, design: .monospaced))
+                                .font(.system(.title3, design: .monospaced))
                                 .textSelection(.enabled)
                             
                             Divider()
                                 .opacity(0.5)
                             
                             Text(inputText)
-                                .font(.system(.callout))
+                                .font(.callout)
                                 .foregroundColor(.secondary)
                                 .textSelection(.enabled)
                         }
@@ -164,8 +165,8 @@ struct TimestampedView: View {
                 }
             }
         }
-        .padding(8)
-        .frame(width: 380, height: 220)
+        .padding()
+        .frame(width: 450)
         .onAppear {
             identifyAndConvert()
         }
