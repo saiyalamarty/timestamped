@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftDate
+import LaunchAtLogin
 
 struct TimestampedView: View {
     @EnvironmentObject var preferences: Preferences
@@ -63,7 +64,6 @@ struct TimestampedView: View {
             Spacer()
             
             settingsButton
-            quitButton
         }
     }
     
@@ -75,6 +75,17 @@ struct TimestampedView: View {
                 dateInputOrderPicker
                 dateOutputFormatPicker
                 timeOutputFormatPicker
+                
+                Divider()
+                
+                launchAtLogin
+                
+                Divider()
+                
+                Button("Quit") {
+                    NSApplication.shared.terminate(nil)
+                }
+                .keyboardShortcut("q", modifiers: .command)
             }
         } label: {
             Image(systemName: "gearshape.fill")
@@ -143,17 +154,8 @@ struct TimestampedView: View {
         }
     }
     
-    private var quitButton: some View {
-        Button(action: { NSApplication.shared.terminate(nil) }) {
-            Text("Quit")
-                .font(.caption)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 2)
-        }
-        .buttonStyle(.plain)
-        .background(Color.secondary.opacity(0.2))
-        .clipShape(Capsule())
-        .help("Quit App")
+    private var launchAtLogin: some View {
+        LaunchAtLogin.Toggle()
     }
     
     private var inputField: some View {
@@ -202,32 +204,38 @@ struct TimestampedView: View {
     private var presetButtons: some View {
         HStack(spacing: 12) {
             ForEach(["now", "tomorrow", "yesterday"], id: \.self) { preset in
-                Button(preset.capitalized) {
+                Button(action: {
                     rawInputText = convertPresetToDate(for: preset)
                     identifyAndConvert()
+                }) {
+                    Text(preset.capitalized)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .contentShape(RoundedRectangle(cornerRadius: 4))
+                        .fixedSize(horizontal: true, vertical: false)
+                        .lineLimit(1)
                 }
-                .buttonStyle(.plain)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
+                .buttonStyle(.borderless)
                 .background(Color.secondary.opacity(0.1))
                 .clipShape(RoundedRectangle(cornerRadius: 4))
-                .lineLimit(1)
-                .fixedSize(horizontal: true, vertical: false)
             }
             
             // Add clipboard preset button
             if let clipboardString = NSPasteboard.general.string(forType: .string) {
-                Button("Paste from clipboard") {
+                Button(action: {
                     rawInputText = clipboardString
                     identifyAndConvert()
+                }) {
+                    Text("Paste from clipboard")
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .contentShape(RoundedRectangle(cornerRadius: 4))
+                        .fixedSize(horizontal: true, vertical: false)
+                        .lineLimit(1)
                 }
-                .buttonStyle(.plain)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
+                .buttonStyle(.borderless)
                 .background(Color.secondary.opacity(0.1))
                 .clipShape(RoundedRectangle(cornerRadius: 4))
-                .lineLimit(1)
-                .fixedSize(horizontal: true, vertical: false)
             }
         }
         .font(.body)
@@ -294,13 +302,13 @@ struct TimestampedView: View {
     
     func identifyAndConvert() {
         inferRawInput()
-
+        
         if inputText.isEmpty {
             result = "No input"
             inputText = "..."
             return
         }
-
+        
         if let unixTimestamp = Double(inputText) {
             // Input is a Unix timestamp
             let date: Date
@@ -355,10 +363,10 @@ struct TimestampedView: View {
             }
         }
     }
-
+    
     func inferRawInput() {
         inputText = rawInputText.trimmingCharacters(in: .whitespaces).lowercased()
-
+        
         if ["now", "current", "today", "tomorrow", "yesterday"].contains(inputText) {
             inputText = convertPresetToDate(for: inputText)
             if let date = inputText.toDate() {

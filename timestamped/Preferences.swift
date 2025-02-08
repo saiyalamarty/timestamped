@@ -33,7 +33,7 @@ class Preferences: ObservableObject {
             UserDefaults.standard.set(timeOutputFormat, forKey: "timeOutputFormat")
         }
     }
-
+    
     init() {
         self.timestampUnit = UserDefaults.standard.string(forKey: "timestampUnit") ?? "Seconds"
         self.timeZone = UserDefaults.standard.string(forKey: "timeZone") ?? TimeZone.current.identifier

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A9A83032D440FDF00FE3800 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 2A9A83022D440FDF00FE3800 /* SwiftDate */; };
+		2AB0C1222D48AEEA00643B3A /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB0C1212D48AEEA00643B3A /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB0C1222D48AEEA00643B3A /* LaunchAtLogin in Frameworks */,
 				2A9A83032D440FDF00FE3800 /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +73,7 @@
 			name = timestamped;
 			packageProductDependencies = (
 				2A9A83022D440FDF00FE3800 /* SwiftDate */,
+				2AB0C1212D48AEEA00643B3A /* LaunchAtLogin */,
 			);
 			productName = timestamped;
 			productReference = 2AF161ED2D42113C002A98BC /* timestamped.app */;
@@ -102,6 +105,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				2A9A83012D440FDF00FE3800 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				2AB0C1202D48AEEA00643B3A /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2AF161EE2D42113C002A98BC /* Products */;
@@ -340,6 +344,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		2AB0C1202D48AEEA00643B3A /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -347,6 +359,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A9A83012D440FDF00FE3800 /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
+		};
+		2AB0C1212D48AEEA00643B3A /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AB0C1202D48AEEA00643B3A /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
