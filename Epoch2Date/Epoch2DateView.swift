@@ -1,6 +1,6 @@
 //
-//  Timestamped.swift
-//  timestamped
+//  Epoch2DateView.swift
+//  Epoch2Date
 //
 //  Created by Sai Yalamarty on 1/22/25.
 //
