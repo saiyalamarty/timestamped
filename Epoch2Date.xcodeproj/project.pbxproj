@@ -12,7 +12,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2AF161ED2D42113C002A98BC /* timestamped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timestamped.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AF161ED2D42113C002A98BC /* Epoch2Date.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Epoch2Date.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -47,7 +47,7 @@
 		2AF161EE2D42113C002A98BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2AF161ED2D42113C002A98BC /* timestamped.app */,
+				2AF161ED2D42113C002A98BC /* Epoch2Date.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,9 +55,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2AF161EC2D42113C002A98BC /* timestamped */ = {
+		2AF161EC2D42113C002A98BC /* Epoch2Date */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2AF161FC2D42113D002A98BC /* Build configuration list for PBXNativeTarget "timestamped" */;
+			buildConfigurationList = 2AF161FC2D42113D002A98BC /* Build configuration list for PBXNativeTarget "Epoch2Date" */;
 			buildPhases = (
 				2AF161E92D42113C002A98BC /* Sources */,
 				2AF161EA2D42113C002A98BC /* Frameworks */,
@@ -70,13 +70,13 @@
 			fileSystemSynchronizedGroups = (
 				2AF161EF2D42113C002A98BC /* timestamped */,
 			);
-			name = timestamped;
+			name = Epoch2Date;
 			packageProductDependencies = (
 				2A9A83022D440FDF00FE3800 /* SwiftDate */,
 				2AB0C1212D48AEEA00643B3A /* LaunchAtLogin */,
 			);
 			productName = timestamped;
-			productReference = 2AF161ED2D42113C002A98BC /* timestamped.app */;
+			productReference = 2AF161ED2D42113C002A98BC /* Epoch2Date.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -94,7 +94,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2AF161E82D42113C002A98BC /* Build configuration list for PBXProject "timestamped" */;
+			buildConfigurationList = 2AF161E82D42113C002A98BC /* Build configuration list for PBXProject "Epoch2Date" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2AF161EC2D42113C002A98BC /* timestamped */,
+				2AF161EC2D42113C002A98BC /* Epoch2Date */,
 			);
 		};
 /* End PBXProject section */
@@ -261,6 +261,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = timestamped/timestamped.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -270,6 +271,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Epoch2Date;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -277,7 +280,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.saiyalamarty.timestamped;
+				PRODUCT_BUNDLE_IDENTIFIER = com.saiyalamarty.epoch2date;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -289,6 +292,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = timestamped/timestamped.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -298,6 +302,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Epoch2Date;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -305,7 +311,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.saiyalamarty.timestamped;
+				PRODUCT_BUNDLE_IDENTIFIER = com.saiyalamarty.epoch2date;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -315,7 +321,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2AF161E82D42113C002A98BC /* Build configuration list for PBXProject "timestamped" */ = {
+		2AF161E82D42113C002A98BC /* Build configuration list for PBXProject "Epoch2Date" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2AF161FA2D42113D002A98BC /* Debug */,
@@ -324,7 +330,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2AF161FC2D42113D002A98BC /* Build configuration list for PBXNativeTarget "timestamped" */ = {
+		2AF161FC2D42113D002A98BC /* Build configuration list for PBXNativeTarget "Epoch2Date" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2AF161FD2D42113D002A98BC /* Debug */,
