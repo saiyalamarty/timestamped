@@ -1,7 +1,7 @@
 # Epoch2Date
 
 <p align="center">
-  <img src="assets/icon.png" width="128" height="128" alt="Epoch2Date icon">
+  <img src="assets/Icon-256.png" width="256" height="256" alt="Epoch2Date icon">
 </p>
 
 A native macOS menubar app for quick and easy Unix timestamp conversions. Convert timestamps to human-readable dates and vice versa, right from your menubar – no browser needed!
