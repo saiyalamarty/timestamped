@@ -73,6 +73,9 @@ struct TimestampedView: View {
                 timestampUnitPicker
                 timeZonePicker
                 dateInputOrderPicker
+                
+                Divider()
+                
                 dateOutputFormatPicker
                 timeOutputFormatPicker
                 
@@ -98,7 +101,7 @@ struct TimestampedView: View {
     }
     
     private var timestampUnitPicker: some View {
-        Picker("Timestamp Unit", selection: $preferences.timestampUnit) {
+        Picker("Timestamp Precision", selection: $preferences.timestampUnit) {
             ForEach(["Seconds", "Milliseconds"], id: \.self) { unit in
                 Text(unit).tag(unit)
             }
@@ -119,8 +122,8 @@ struct TimestampedView: View {
     }
     
     private var dateInputOrderPicker: some View {
-        Picker("Date Input Order", selection: $preferences.dateInputOrder) {
-            ForEach(["Month/Day/Year", "Day/Month/Year"], id: \.self) { order in
+        Picker("Day/Month Input Order", selection: $preferences.dateInputOrder) {
+            ForEach(["Month / Day", "Day / Month"], id: \.self) { order in
                 Text(order).tag(order)
             }
         }
@@ -130,7 +133,6 @@ struct TimestampedView: View {
         Picker("Date Output Format", selection: $preferences.dateOutputFormat) {
             ForEach([
                 "MMMM d, yyyy",
-                "MMM d, yyyy", 
                 "MM/dd/yyyy",
                 "dd/MM/yyyy",
                 "yyyy-MM-dd"
@@ -336,10 +338,10 @@ struct TimestampedView: View {
                 // Filter formats based on dateInputOrder preference
                 let filteredFormats = DateFormats.dateFormats.filter { format in
                     switch preferences.dateInputOrder {
-                    case "Month/Day/Year":
+                    case "Month / Day":
                         // Include formats that start with month or don't have explicit date order
                         return !format.contains("dd/MM") && !format.contains("dd.MM")
-                    case "Day/Month/Year":
+                    case "Day / Month":
                         // Include formats that start with day or don't have explicit date order
                         return !format.contains("MM/dd") && !format.contains("MM.dd")
                     default:
